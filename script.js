@@ -13,6 +13,7 @@ let mouseX       = 0;
 let mouseY       = 0;
 let screen       = document.querySelector('#tela');
 let ctx          = screen.getContext('2d');
+let anchor       = document.createElement('a');
 
 
 //* Eventos
@@ -25,6 +26,7 @@ screen.addEventListener('mousedown', mouseDownEvent);
 screen.addEventListener('mousemove', mouseMoveEvent);
 screen.addEventListener('mouseup', mouseUpEvent);
 document.querySelector('.clear').addEventListener('click', clearScreen);
+document.querySelector('.download').addEventListener('click', download);
 
 //* Funções
 
@@ -71,4 +73,10 @@ function draw(x, y) {
 function clearScreen() {
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+};
+
+function download(){
+    anchor.href = screen.toDataURL("image/png");
+    anchor.download = "IMAGE.PNG";
+    anchor.click();
 };

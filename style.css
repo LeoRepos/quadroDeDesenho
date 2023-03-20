@@ -38,7 +38,7 @@ h1 {
     border: 5px solid #FFF;
 }
 
-.clear {
+.clear, .download {
     border: 1px solid #000;
     background-color: rgba(0, 0, 0, 0.2);
     color: #FFF;
@@ -47,8 +47,18 @@ h1 {
     cursor: pointer;
 }
 
+#buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#buttons button {
+    margin-left: 1rem;
+}
+
 footer {
     margin-top: 20px;
     color: #FFF;
     font-size: 13px;
 }
+
